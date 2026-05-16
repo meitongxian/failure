@@ -1,0 +1,102 @@
+@font-face {
+    font-family: "Voyager";
+    src: url('Voyager-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Voyager";
+    src: url('Voyager-Italic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --background: #E7E7E7;
+    --text-primary: #080808;
+    --clock-frame-diameter: 300px;
+    --clock-frame-border: 20px;
+    --hands-width: 1vh;
+    --hour-hand-height: 30vh;
+    --minute-hand-height: 35vh;
+    --second-hand-height: 40vh;
+    --rotation: 0;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: var(--background);
+    overflow: hidden;
+}
+
+.caption {
+    font-family: "Voyager";
+    font-size: 1.5rem;
+    padding-bottom: 5rem;
+    opacity: 50%;
+}
+
+.clock-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+.hands-wrapper {
+    position: static;
+}
+
+.hour-hand, .minute-hand, .second-hand {
+    filter: drop-shadow(0 0 0.5rem gray);
+    position: absolute;
+    transform-origin: bottom;
+    bottom: 50vh;
+    transform: rotate(calc(var(--rotation) * 1deg)) translateZ(0);
+}
+
+.hour-hand {
+    outline: calc(0.5*var(--hands-width)) solid var(--text-primary);
+    height: var(--hour-hand-height);
+}
+
+.minute-hand {
+    outline: calc(0.5*var(--hands-width)) solid var(--text-primary);
+    height: var(--minute-hand-height);
+}
+
+.second-hand {
+    outline: calc(0.25*var(--hands-width)) solid crimson;
+    height: var(--second-hand-height);
+}
+
+.centerpin {
+    filter: drop-shadow(0 0 0.5rem gray);
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 50vh;
+    transform: translateY(0.5rem);
+}
+
+/* 
+@media(max-width: 800px) {
+  
+  .clocks-wrapper {
+    transform: rotate(-90deg) translateY(50%);
+    align-self: center;
+  }
+  
+} */
