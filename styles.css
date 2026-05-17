@@ -25,9 +25,9 @@
     --clock-frame-diameter: 300px;
     --clock-frame-border: 20px;
     --hands-width: 1vh;
-    --hour-hand-height: 30vh;
-    --minute-hand-height: 35vh;
-    --second-hand-height: 40vh;
+    --hour-hand-height: 20vh;
+    --minute-hand-height: 40vh;
+    --second-hand-height: 45vh;
     --rotation: 0;
 }
 
